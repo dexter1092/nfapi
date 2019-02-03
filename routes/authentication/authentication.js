@@ -8,9 +8,9 @@ router.get("/", function(req, res, next) {
 });
 
 router.post("/", function(req, res, next) {
-  console.log('1');
+  // console.log(JSON.parse(req.body));
+  console.log(req.body);
   if(typeof(req.body.user_name)&& typeof(req.body.password)){
-    console.log('2');
     Auth.getuser(req.body, function(err,data){
       if(err){
         res.json({
